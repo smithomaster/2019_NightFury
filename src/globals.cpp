@@ -4,9 +4,10 @@ int FRONT_LEFT_MOTOR_PORT =  1;
 int BACK_LEFT_MOTOR_PORT =  2;
 int FRONT_RIGHT_MOTOR_PORT =  9;
 int BACK_RIGHT_MOTOR_PORT =  10;
-
+int VISION_PORT = 11;
 okapi::Controller master;
 
+pros::Vision camera(VISION_PORT);
 using namespace okapi::literals;
 okapi::ChassisControllerIntegrated drive = okapi::ChassisControllerFactory::create(
     {FRONT_LEFT_MOTOR_PORT, BACK_LEFT_MOTOR_PORT}, {FRONT_RIGHT_MOTOR_PORT, BACK_RIGHT_MOTOR_PORT},

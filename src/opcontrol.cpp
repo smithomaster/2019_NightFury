@@ -1,6 +1,9 @@
 #include "main.h"
 #include "globals.hpp"
 
+#define TORTEX_GREEN 1
+#define TORTEX_YELLOW 2
+#define TORTEX_ORANGE 3
 /**
  * Runs the operator control code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
@@ -15,8 +18,27 @@
  * task, not resume it from where it left off.
  */
 void opcontrol() {
+	pros::Vision vision_sensor (11);
 	while(true){
 		drive.tank(master.getAnalog(okapi::ControllerAnalog::leftY),
 		master.getAnalog(okapi::ControllerAnalog::rightY)*-1);
+
+		pros::vision_object_s_t rtn = vision_sensor.get_by_sig(0, TORTEX_YELLOW);
+
+		if (rtn.signature == 2){
+			while (rtn.x_middle_coord < 310) {
+				drive.rotate(-50);
+			}
+		
+			while(rtn.x_middle_coord > 330) {
+				drive.rotate(50);
+			}
+
+			while (rtn.x_middle_coord > 310 && rtn.x_middle_coord <330 && rtn.width < 400){
+				drive.forward(50);
+			}
+		}
+		// Prints "sig: 1"
+		pros::delay(2);
 	}
 }
