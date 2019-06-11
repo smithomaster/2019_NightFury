@@ -20,15 +20,19 @@
 void opcontrol() {
 	pros::Vision vision_sensor (11);
 	while(true){
-		drive.tank(master.getAnalog(okapi::ControllerAnalog::leftY),
-		master.getAnalog(okapi::ControllerAnalog::rightY)*-1);
+		if(okapi::ControllerButton::isPressed::A){
+			linear.forward(master.getDigital(
+				okapi::ControllerDigital::A));
+		}
+		drive.tank(master.getAnalog(okapi::ControllerAnalovoidg::leftY),
+				   master.getAnalog(okapi::ControllerAnalog::rightY) * -1);
 
 		pros::vision_object_s_t rtn = vision_sensor.get_by_sig(0, TORTEX_YELLOW);
 
 		if (rtn.signature == TORTEX_YELLOW){
-			if (rtn.x_middle_coord < 120 && rtn.x_middle_coord > 0){
+			if (rtn.x_middle_coord < 130 && rtn.x_middle_coord > 0){
 				drive.right(20);
-			} else if (rtn.x_middle_coord > 200 && rtn.x_middle_coord < 320) {
+			} else if (rtn.x_middle_coord > 190 && rtn.x_middle_coord < 320) {
 				drive.left(20);
 			} else if (rtn.width < 280) {
 				drive.forward (20);
