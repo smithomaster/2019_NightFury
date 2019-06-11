@@ -10,6 +10,7 @@ extern int RIGHT_LINEAR_MOTOR_PORT;
 extern int FRONT_RIGHT_MOTOR_PORT;
 extern int BACK_RIGHT_MOTOR_PORT;
 extern int VISION_PORT;
+extern int TORTEX_YELLOW;
 
 extern okapi::Controller master;
 extern pros::Vision camera;

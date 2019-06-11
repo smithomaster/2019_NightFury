@@ -7,6 +7,7 @@ int RIGHT_LINEAR_MOTOR_PORT = 8;
 int FRONT_RIGHT_MOTOR_PORT =  9;
 int BACK_RIGHT_MOTOR_PORT =  10;
 int VISION_PORT = 11;
+int TORTEX_YELLOW = 2;
 okapi::Controller master;
 
 pros::Vision camera(VISION_PORT);
