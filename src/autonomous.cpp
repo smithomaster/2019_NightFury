@@ -13,9 +13,8 @@
  * from where it left off.
  */
 void autonomous() {
-    pros::Vision vision_sensor(11);
     while(true){
-        pros::vision_object_s_t rtn = vision_sensor.get_by_sig(0, TORTEX_YELLOW);
+        pros::vision_object_s_t rtn = camera.get_by_sig(0, TORTEX_YELLOW);
 
         if (rtn.signature == TORTEX_YELLOW)
         {
