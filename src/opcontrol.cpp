@@ -20,11 +20,11 @@
 void opcontrol() {
 	pros::Vision vision_sensor (11);
 	while(true){
-		if(okapi::ControllerButton::isPressed::A){
+		if(master.getDigital(okapi::ControllerDigital::A) == true){
 			linear.forward(master.getDigital(
 				okapi::ControllerDigital::A));
 		}
-		drive.tank(master.getAnalog(okapi::ControllerAnalovoidg::leftY),
+		drive.tank(master.getAnalog(okapi::ControllerAnalog::leftY),
 				   master.getAnalog(okapi::ControllerAnalog::rightY) * -1);
 
 		pros::vision_object_s_t rtn = vision_sensor.get_by_sig(0, TORTEX_YELLOW);
