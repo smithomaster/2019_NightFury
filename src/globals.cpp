@@ -29,9 +29,9 @@ okapi::ChassisControllerIntegrated drive = okapi::ChassisControllerFactory::crea
     okapi::AbstractMotor::gearset::green,
     {4_in, 11.5_in}
 );
-okapi::ChassisControllerIntegrated linear = okapi::ChassisControllerFactory::create(
-    LEFT_LINEAR_MOTOR_PORT, RIGHT_LINEAR_MOTOR_PORT, 
-    okapi::AbstractMotor::gearset::red
+auto linear = okapi::AsyncControllerFactory::posPID({
+    LEFT_LINEAR_MOTOR_PORT, RIGHT_LINEAR_MOTOR_PORT},
+    0.001, 0.0, 0.0001
 );
 okapi::ChassisControllerIntegrated rollers = okapi::ChassisControllerFactory::create(
     LEFT_ROLLER_MOTOR_PORT, RIGHT_ROLLER_MOTOR_PORT,
