@@ -50,7 +50,7 @@ void initialize() {
     pros::lcd::initialize();
 
     pros::lcd::print(0, "ALLIANCE (BTN 1): RED");
-    pros::lcd::print(1, "POSITION (BTN 2): 1");
+    pros::lcd::print(1, "POSITION (BTN 2): FAR");
     pros::lcd::print(2, "STACK (BTN 3): BIG");
     pros::lcd::print(4, "PEMBROKE PEMBOTS 12223C");
     pros::lcd::print(7, "GOOD LUCK, TEAM!");

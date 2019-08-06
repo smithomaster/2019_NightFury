@@ -6,7 +6,7 @@
 // auto flags
 extern bool ALLIANCE;
 extern bool STACK;
-extern int POSITION;
+extern bool POSITION;
 
 // vision
 extern int VISION_PORT;
