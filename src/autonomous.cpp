@@ -23,7 +23,11 @@ void autonomous() {
     if (ALLIANCE == true){ // BLUE
         if (STACK == false) { // BIG
             if (POSITION == false){ // FAR
-
+                drive.moveDistance(2_ft);
+                drive.turnAngle(90_deg);
+                drive.moveDistance(3.5_ft);
+                drive.turnAngle(90_deg);
+                /* DROP */
             } if (POSITION == true){ // NEAR
                 drive.moveDistance(1_ft);
                 drive.turnAngle(-90_deg);
