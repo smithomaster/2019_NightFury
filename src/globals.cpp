@@ -1,5 +1,11 @@
 #include "main.h"
 
+// auto flags
+bool ALLIANCE = false; // red false, blue true
+bool STACK = false; // big false, small true
+int POSITION = 0; // 0 next to big stack, 1 next down, 
+                  // 3 next to small stack, 2 next up
+
 // vision
 int VISION_PORT = 11;
 int TORTEX_YELLOW = 2;

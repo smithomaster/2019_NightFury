@@ -3,6 +3,11 @@
 #ifndef GLOBALS
 #define GLOBALS
 
+// auto flags
+extern bool ALLIANCE;
+extern bool STACK;
+extern int POSITION;
+
 // vision
 extern int VISION_PORT;
 extern int TORTEX_YELLOW;
