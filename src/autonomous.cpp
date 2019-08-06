@@ -41,9 +41,21 @@ void autonomous() {
         }
         if (STACK == true) { // SMALL
             if (POSITION == false){ // FAR
-
+                drive.moveDistance(3_ft);
+                drive.turnAngle(-90_deg);
+                drive.moveDistance(1_ft);
+                drive.turnAngle(-90_deg);
+                drive.moveDistance(3_ft);
+                drive.turnAngle(90_deg);
+                drive.moveDistance(2_ft);
+                /* DROP */
             } if (POSITION == true){ // NEAR
-
+                drive.moveDistance(3_ft);
+                drive.turnAngle(-90_deg);
+                drive.moveDistance(1_ft);
+                drive.turnAngle(-90_deg);
+                drive.moveDistance(2_ft);
+                /* DROP */
             }
         }
     }
