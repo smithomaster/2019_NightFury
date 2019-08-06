@@ -10,8 +10,7 @@
 
 // red false, blue true
 // big false, small true
-// 0 next to big stack, 1 next down,
-// 3 next to small stack, 2 next up
+// false far, true near
 
 void on_alliance_button () {
     if(ALLIANCE == false){
@@ -25,24 +24,13 @@ void on_alliance_button () {
 }
 void on_position_button()
 {
-    if(POSITION == 0){
-        POSITION = 1;
-        pros::lcd::print(1, "POSITION (BTN 2): 2");
+    if(POSITION == false){
+        POSITION = true;
+        pros::lcd::print(1, "POSITION (BTN 2): NEAR");
     }
-    else if (POSITION == 1)
-    {
-        POSITION = 2;
-        pros::lcd::print(1, "POSITION (BTN 2): 3");
-    }
-    else if (POSITION == 2)
-    {
-        POSITION = 3;
-        pros::lcd::print(1, "POSITION (BTN 2): 4");
-    }
-    else if (POSITION == 3)
-    {
-        POSITION = 0;
-        pros::lcd::print(1, "POSITION (BTN 2): 1");
+    else if (POSITION == true) {
+        POSITION = false;
+        pros::lcd::print(1, "POSITION (BTN 2): FAR");
     }
 }
 void on_stack_button()
@@ -64,6 +52,8 @@ void initialize() {
     pros::lcd::print(0, "ALLIANCE (BTN 1): RED");
     pros::lcd::print(1, "POSITION (BTN 2): 1");
     pros::lcd::print(2, "STACK (BTN 3): BIG");
+    pros::lcd::print(4, "PEMBROKE PEMBOTS 12223C");
+    pros::lcd::print(7, "GOOD LUCK, TEAM!");
 
     pros::lcd::register_btn0_cb(on_alliance_button);
     pros::lcd::register_btn1_cb(on_position_button);
