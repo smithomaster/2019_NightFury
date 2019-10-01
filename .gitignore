@@ -8,3 +8,11 @@ bin/*
 *.elf
 ./bin/*
 ./bin
+*.json
+*.json
+/.vscode
+/bin/*
+/bin/*.bin
+/bin/*.elf
+/bin/*.o
+/compile_commands.json
